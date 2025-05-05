@@ -1,8 +1,8 @@
-package brum;
+package brum.chain;
 
 import org.junit.jupiter.api.Test;
 
-import static brum.Signature.genesis;
+import static brum.chain.Signature.genesis;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BlockTest {

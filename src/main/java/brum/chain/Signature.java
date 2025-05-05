@@ -1,4 +1,4 @@
-package brum;
+package brum.chain;
 
 import java.security.MessageDigest;
 import java.util.Objects;

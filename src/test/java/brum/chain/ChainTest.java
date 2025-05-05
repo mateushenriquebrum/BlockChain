@@ -1,4 +1,4 @@
-package brum;
+package brum.chain;
 
 import org.junit.jupiter.api.Test;
 
