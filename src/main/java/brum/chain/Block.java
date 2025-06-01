@@ -4,28 +4,28 @@ import static java.time.ZonedDateTime.now;
 import static java.time.ZoneOffset.*;
 
 class Block {
-    public final Signature mine;
-    public final Signature parent;
+    public final Hash mine;
+    public final Hash parent;
     public final Data content;
     public final TimeStamp at;
 
-    private Block(Signature mine, Signature parent, Data content, TimeStamp at) {
+    private Block(Hash mine, Hash parent, Data content, TimeStamp at) {
         this.content = content;
         this.mine = mine;
         this.at = at;
         this.parent = parent;
     }
 
-    public static Block of(Signature theirs, Data content, Integer difficulty) {
+    public static Block of(Hash theirs, Data content, Integer difficulty) {
         var at = new TimeStamp(now(UTC));
-        return new Block(Signature.of(theirs, content, at, difficulty), theirs, content, at);
+        return new Block(Hash.of(theirs, content, at, difficulty), theirs, content, at);
     }
 
     public static Block genesis() {
-        return of(Signature.genesis(), new Data("00"), 2);
+        return of(Hash.genesis(), new Data("00"), 2);
     }
 
     public boolean isValid() {
-        return this.mine.equals(Signature.of(parent, content, at, mine.difficulty));
+        return this.mine.equals(Hash.of(parent, content, at, mine.difficulty));
     }
 }

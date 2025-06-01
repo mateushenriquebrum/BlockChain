@@ -2,7 +2,7 @@ package brum.chain;
 
 import org.junit.jupiter.api.Test;
 
-import static brum.chain.Signature.genesis;
+import static brum.chain.Hash.genesis;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BlockTest {
